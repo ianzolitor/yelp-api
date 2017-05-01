@@ -24,11 +24,15 @@ body {
 
 .results {
   display: flex;
-  justify-content: space-around; }
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 18px; }
 
 ul {
   display: flex; }
   ul li {
     padding: 20px; }
+  ul a {
+    text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

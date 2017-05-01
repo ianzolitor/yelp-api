@@ -2,9 +2,7 @@ var neighborhoods = document.getElementsByClassName("neighborhood")
 var searchButton = document.getElementsByClassName("search-button")[0];
 var input = document.getElementById("business")
 var locationSelect = document.getElementsByClassName("location-select")[0]
-var busName = document.getElementsByClassName("name")[0]
-var busAddress = document.getElementsByClassName("address")[0]
-var busImage = document.getElementsByClassName("image")[0]
+var results = document.getElementsByClassName("results")[0]
 
 
 var clickNeighborhood = ""
@@ -53,7 +51,7 @@ searchButton.addEventListener("click", searchBusiness)
 
 
 function searchBusiness() {
-
+results.innerHTML = ""
 var inputText = input.value
  $.ajax({
          url: "https://yelp-search.herokuapp.com/search",
@@ -66,7 +64,7 @@ var inputText = input.value
          	console.log(response)
        
 			response.businesses.forEach(function(object){
-            busName.innerHTML += "<li>" + object.name + "</li>"
+            results.innerHTML += "<li>" + "<a href = '" + object.url +"'target='_blank'>" +  object.name + "</a>" + "<br>" + object.location.address + "<br>" + "</li>"
 
 
             })
@@ -76,7 +74,7 @@ var inputText = input.value
 }
 
 
-
+// "<img src='" + object.image.url + "'"+ "</a>"
 
 
  // $.ajax({

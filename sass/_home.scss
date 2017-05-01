@@ -31,13 +31,18 @@
 }
 .results {
 	display: flex;
+	flex-wrap:wrap;
 	justify-content:space-around;
+	font-size:18px;
 }
 
 ul {
 	display:flex;
 	li {
 		padding:20px;
+	}
+	a {
+		text-decoration: none;
 	}
 }
 
