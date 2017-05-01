@@ -4,22 +4,13 @@ var input = document.getElementById("business")
 var locationSelect = document.getElementsByClassName("location-select")[0]
 var results = document.getElementsByClassName("results")[0]
 
-
 var clickNeighborhood = ""
-
-// document.body.addEventListener("keypress", function (event) {
-// 	if (event.keyCode===13){
-// 		searchBusiness()
-// 	}
-// })
-
 
 for (var i = 0; i < neighborhoods.length; i++) {
 	neighborhoods[i].addEventListener("mouseover", function(event){
 		event.target.style.cursor = "pointer"
 	})
 }
-
 
 for (let i = 0; i < neighborhoods.length; i++) {
 	neighborhoods[i].addEventListener("click", function(event){
@@ -49,7 +40,6 @@ searchButton.addEventListener("mouseover", function(event){
 
 searchButton.addEventListener("click", searchBusiness)
 
-
 function searchBusiness() {
 results.innerHTML = ""
 var inputText = input.value
@@ -64,8 +54,7 @@ var inputText = input.value
          	console.log(response)
        
 			response.businesses.forEach(function(object){
-            results.innerHTML += "<li>" + "<a href = '" + object.url +"'target='_blank'>" +  object.name + "</a>" + "<br>" + object.location.address + "<br>" + "</li>"
-
+            results.innerHTML += "<li>" + "<a href = '" + object.url +"'target='_blank'>" +  object.name + "</a>" + "<br>" + object.location.address + "<br>" + "<img src='" + object.image_url + "' alt = 'MISSING PHOTO' height='140px' width='140px'>" + "</li>"
 
             })
              
@@ -73,28 +62,14 @@ var inputText = input.value
      })
 }
 
+// document.addEventListener("keyDown", function (event) {
 
-// "<img src='" + object.image.url + "'"+ "</a>"
+// 	if (event.charCode=="enter"){
+// 		console.log(event)
+// 		searchBusiness()
 
-
- // $.ajax({
- //         url: "https://yelp-search.herokuapp.com/search",
- //         method: "GET",
- //         data: {
- //         	term: "pizza",
- //         	location: "philadelphia"
- //        },
- //         success: function(response){
- //             console.log(response)
- //         }
-
- //     })
-
-
-
-
-
-
+// 	}
+// })
 
 
 	
