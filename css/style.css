@@ -22,4 +22,13 @@ body {
     padding: 10px;
     background-color: lightgrey; }
 
+.results {
+  display: flex;
+  justify-content: space-around; }
+
+ul {
+  display: flex; }
+  ul li {
+    padding: 20px; }
+
 /*# sourceMappingURL=style.css.map */
